@@ -1,0 +1,37 @@
+<div class="bg-container">
+    <div class="google-container">
+      <img
+        [src]=path
+        class="google-image"
+      />
+      <div class="search-container">
+        <div class="input-container">
+          <img
+            src="https://assets.ccbp.in/frontend/react-js/google-search-icon.png"
+            alt="search icon"
+            class="image-search"
+          />
+          <input
+            type="search"
+            class="input-element"
+            placeholder="Search Google"
+            (input)="suggestInput($event)"
+            [value]="searchInput"
+          />
+        </div>
+        <ul class="list-Items">
+          <li *ngFor="let eachItem of filterSuggestions()" class="each-arrow-list">
+            <p class="suggestion-description">{{ eachItem.suggestion }}</p>
+            <button type="button" class="arrow-enter" (click)="arrowEachClick(eachItem.suggestion)">
+              <img
+                src="https://assets.ccbp.in/frontend/react-js/diagonal-arrow-left-up.png"
+                alt="arrow"
+                class="arrow-Element"
+              />
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
